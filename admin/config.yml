@@ -1,0 +1,30 @@
+
+backend:
+  name: github
+  repo: admin-karangpari/website-desa-karangpari
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+site_url: https://desa-karangpari.netlify.app
+
+collections:
+  - name: "berita"
+    label: "Berita Desa"
+    folder: "content/berita"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Judul Berita", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Isi Berita", name: "body", widget: "markdown" }
+
+  - name: "pengumuman"
+    label: "Pengumuman Desa"
+    folder: "content/pengumuman"
+    create: true
+    fields:
+      - { label: "Judul", name: "title", widget: "string" }
+      - { label: "Tanggal", name: "date", widget: "datetime" }
+      - { label: "Isi Pengumuman", name: "body", widget: "markdown" }
